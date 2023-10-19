@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses/Expenses";
 
-function App() {
+const App = () => {
     const expenses = [
         {
             date: new Date(2023, 0, 10),
@@ -11,7 +11,7 @@ function App() {
             price: 30.99
         },
         {
-            date: new Date(2023, 0, 5),
+            date: new Date(2023, 0, 10),
             title:'New jeans',
             price: 99.99
         }
@@ -19,8 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <ExpenseItem expenseData={expenses[0]}></ExpenseItem>
-      <ExpenseItem expenseData={expenses[1]}></ExpenseItem>
+      <Expenses expenses={expenses}></Expenses>
     </div>
   );
 }
