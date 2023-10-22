@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
+
 
 const App = () => {
     const expenses = [
@@ -15,10 +17,20 @@ const App = () => {
             title:'New jeans',
             price: 99.99
         }
+
+
     ]
+
+
+
+        const addExpensehandler = (expense) => {
+            console.log('In App.js')
+            console.log(expense)
+        }
 
   return (
     <div className="App">
+      <NewExpense onAddExpense={addExpensehandler}></NewExpense>
       <Expenses expenses={expenses}></Expenses>
     </div>
   );
