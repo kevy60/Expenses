@@ -8,7 +8,7 @@ const ExpensesFilter = (props) => {
     const yearChangeHandler = (event) => {
         setSelectedYear(event.target.value);
         console.log('Aasta on muudetud:', event.target.value); 
-        props.onYearChange(event.target.value);
+        props.onChangeFilter(event.target.value);
     };
 
     return (
