@@ -7,14 +7,7 @@ const ExpenseItem = (props) => {
     const [title, setTitle] = useState(props.expenseData.title);
     const [isUpdated, setIsUpdated] = useState(false);
 
-    const clickHandler = () => {
-        if (isUpdated) {
-            setTitle(props.expenseData.title); 
-        } else {
-            setTitle('Updated!'); 
-        }
-        setIsUpdated(!isUpdated); 
-    }
+
 
     return (
         <div className="expense-item">
@@ -23,7 +16,7 @@ const ExpenseItem = (props) => {
                 <h2>{title}</h2>
                 <div className="expense-item__price">{props.expenseData.price}€</div>
             </div>
-            <button onClick={clickHandler}>Change Title</button>
+            
         </div>
     );
 }
