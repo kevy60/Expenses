@@ -10,15 +10,21 @@ import NewExpense from "./components/NewExpense/NewExpense";
 const DUMMY_EXPENSES = [
         {
             id: 'e1',
-            date: new Date(2023, 0, 10),
+            date: new Date(2024, 0, 10),
             title:'New book',
             price: 30.99
         },
         {
             id: 'e2',
-            date: new Date(2023, 0, 10),
+            date: new Date(2024, 0, 10),
             title:'New jeans',
             price: 99.99
+        },
+        {
+            id: 'e3',
+            date: new Date(2023, 0, 18),
+            title:'New bag',
+            price: 199.99
         }
 
 
