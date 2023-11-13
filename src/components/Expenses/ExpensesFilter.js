@@ -1,21 +1,24 @@
-import React, { useState } from 'react'; 
+import React from 'react';
 
 import './ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
-    const [selectedYear, setSelectedYear] = useState('2023');
 
-    const yearChangeHandler = (event) => {
-        setSelectedYear(event.target.value);
-        console.log('Aasta on muudetud:', event.target.value); 
-        props.onChangeFilter(event.target.value);
-    };
+    const saveExpenseFilterHandler = (enteredExpenseFilter) => {
+        props.onAddExpenseFilter(enteredExpenseFilter)
+    }
+
+    const selectHandler = (event) => {
+        event.preventDefault()
+        const expenseFilter = event.target.value
+        saveExpenseFilterHandler(expenseFilter)
+    }
 
     return (
         <div className='expenses-filter'>
             <div className='expenses-filter__control'>
                 <label>Filter by year</label>
-                <select value={selectedYear} onChange={yearChangeHandler}>
+                <select onChange={selectHandler}>
                     <option value='2023'>2023</option>
                     <option value='2024'>2024</option>
                     <option value='2025'>2025</option>
@@ -25,5 +28,4 @@ const ExpensesFilter = (props) => {
     );
 };
 
-export default ExpensesFilter;
-
+export default ExpensesFilter
